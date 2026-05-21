@@ -1,9 +1,9 @@
 Package: MMRcaseselection
 Type: Package
 Title: Case Classification and Selection Based on Regression Results
-Version: 0.1.0
+Version: 0.2.0
 Authors@R: 
-    person("Ingo", "Rohlfing", email = "i.rohlfing@uni-koeln.de",
+    person("Ingo", "Rohlfing", email = "ingo.rohlfing@uni-passau.de",
            role = c("aut", "cre"),
            comment = c(ORCID = "0000-0001-8715-4771"))
 Depends: R (>= 2.10)
@@ -16,17 +16,17 @@ Description: Researchers doing a mixed-methods analysis (nested analysis as
     these types.
 License: GPL-3
 Encoding: UTF-8
-LazyData: true
 Imports: stats, ggplot2
-RoxygenNote: 7.1.0
 URL: https://github.com/ingorohlfing/MMRcaseselection
-BugReports: https://github.com/ingorohlfing/MMRcaseselection
+BugReports: https://github.com/ingorohlfing/MMRcaseselection/issues
 Suggests: knitr, rmarkdown
 VignetteBuilder: knitr
 Language: en-US
+Config/roxygen2/version: 8.0.0
 NeedsCompilation: no
-Packaged: 2020-05-27 19:34:29 UTC; Ingo R
-Author: Ingo Rohlfing [aut, cre] (<https://orcid.org/0000-0001-8715-4771>)
-Maintainer: Ingo Rohlfing <i.rohlfing@uni-koeln.de>
+Packaged: 2026-05-17 17:35:46 UTC; ingor
+Author: Ingo Rohlfing [aut, cre] (ORCID:
+    <https://orcid.org/0000-0001-8715-4771>)
+Maintainer: Ingo Rohlfing <ingo.rohlfing@uni-passau.de>
 Repository: CRAN
-Date/Publication: 2020-06-03 11:40:02 UTC
+Date/Publication: 2026-05-21 09:32:15 UTC

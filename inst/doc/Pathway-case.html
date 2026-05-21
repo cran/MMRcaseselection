@@ -12,76 +12,108 @@
 
 <meta name="author" content="Ingo Rohlfing" />
 
-<meta name="date" content="2020-05-27" />
+<meta name="date" content="2026-05-17" />
 
 <title>Pathway case</title>
 
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+
+<style type="text/css">
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
 
 
-<style type="text/css">code{white-space: pre;}</style>
+
+<style type="text/css">
+code {
+white-space: pre;
+}
+.sourceCode {
+overflow: visible;
+}
+</style>
 <style type="text/css" data-origin="pandoc">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
 .sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
 div.sourceCode { margin: 1em 0; }
 pre.sourceCode { margin: 0; }
 @media screen {
 div.sourceCode { overflow: auto; }
 }
 @media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
 }
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+position: relative; left: -1em; text-align: right; vertical-align: baseline;
+border: none; display: inline-block;
+-webkit-touch-callout: none; -webkit-user-select: none;
+-khtml-user-select: none; -moz-user-select: none;
+-ms-user-select: none; user-select: none;
+padding: 0 4px; width: 4em;
+color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa; padding-left: 4px; }
 div.sourceCode
-  {  }
+{ }
 @media screen {
-a.sourceLine::before { text-decoration: underline; }
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-
+code span.al { color: #ff0000; font-weight: bold; } 
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.at { color: #7d9029; } 
+code span.bn { color: #40a070; } 
+code span.bu { color: #008000; } 
+code span.cf { color: #007020; font-weight: bold; } 
+code span.ch { color: #4070a0; } 
+code span.cn { color: #880000; } 
+code span.co { color: #60a0b0; font-style: italic; } 
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.do { color: #ba2121; font-style: italic; } 
+code span.dt { color: #902000; } 
+code span.dv { color: #40a070; } 
+code span.er { color: #ff0000; font-weight: bold; } 
+code span.ex { } 
+code span.fl { color: #40a070; } 
+code span.fu { color: #06287e; } 
+code span.im { color: #008000; font-weight: bold; } 
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } 
+code span.kw { color: #007020; font-weight: bold; } 
+code span.op { color: #666666; } 
+code span.ot { color: #007020; } 
+code span.pp { color: #bc7a00; } 
+code span.sc { color: #4070a0; } 
+code span.ss { color: #bb6688; } 
+code span.st { color: #4070a0; } 
+code span.va { color: #19177c; } 
+code span.vs { color: #4070a0; } 
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } 
 </style>
 <script>
 // apply pandoc div.sourceCode style to pre.sourceCode instead
@@ -90,13 +122,20 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   for (var i = 0; i < sheets.length; i++) {
     if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
     try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    for (var j = 0; j < rules.length; j++) {
+    var j = 0;
+    while (j < rules.length) {
       var rule = rules[j];
       // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
+      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") {
+        j++;
+        continue;
+      }
       var style = rule.style.cssText;
       // check if color or background-color is set
-      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
+      if (rule.style.color === '' && rule.style.backgroundColor === '') {
+        j++;
+        continue;
+      }
       // replace div.sourceCode by a pre.sourceCode rule
       sheets[i].deleteRule(j);
       sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
@@ -104,6 +143,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   }
 })();
 </script>
+
 
 
 
@@ -301,44 +341,84 @@ code > span.er { color: #a61717; background-color: #e3d2d2; }
 
 <h1 class="title toc-ignore">Pathway case</h1>
 <h4 class="author">Ingo Rohlfing</h4>
-<h4 class="date">2020-05-27</h4>
+<h4 class="date">2026-05-17</h4>
 
 
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1"><span class="kw">library</span>(MMRcaseselection)</a></code></pre></div>
-<p>The pathway was originally proposed by Gerring (<a href="https://doi.org/10.1177%2F0010414006290784">2007</a>). He defines the <em>pathway value</em> of a case as <span class="math inline">\(|resid_{i_{reduced}}-resid_{i_{full}}|\)</span> if it holds that <span class="math inline">\(|resid_{i_{reduced}}| &gt; |resid_{i_{full}}|\)</span>, where ‘full’ stands for the full regression model, ‘reduced’ for the model that lacks the pathway variable of theoretical interest and <span class="math inline">\(i\)</span> being a case index. Following Gerring, one should only choose among the cases meeting the requirement that <span class="math inline">\(|resid_{i_{reduced}}| &gt; |resid_{i_{full}}|\)</span>. In follow up research, Weller and Barnes (<a href="https://doi.org/10.1017/CBO9781139644501">2014</a>) propose a different calculation of the pathway value, <span class="math inline">\(|resid_{i_{reduced}}|-|resid_{i_{full}}|\)</span>, without specifying an additional requirement about the relationship between the full model residuals and reduced model residuals.</p>
-<p>The function <code>pathway()</code> calculates both types of pathway values and requires the full regression model and the reduced regression model as input. Both models must be <code>lm</code> objects. The dataframe generated by the function contains all variables from the full model plus the following variables:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">library</span>(MMRcaseselection)</span></code></pre></div>
+<p>The pathway was originally proposed by Gerring (<a href="https://doi.org/10.1177%2F0010414006290784">2007</a>). He defines
+the <em>pathway value</em> of a case as <span class="math inline">\(|resid_{i_{reduced}}-resid_{i_{full}}|\)</span> if
+it holds that <span class="math inline">\(|resid_{i_{reduced}}| &gt;
+|resid_{i_{full}}|\)</span>, where ‘full’ stands for the full regression
+model, ‘reduced’ for the model that lacks the pathway variable of
+theoretical interest and <span class="math inline">\(i\)</span> being a
+case index. Following Gerring, one should only choose among the cases
+meeting the requirement that <span class="math inline">\(|resid_{i_{reduced}}| &gt;
+|resid_{i_{full}}|\)</span>. In follow up research, Weller and Barnes
+(<a href="https://doi.org/10.1017/CBO9781139644501">2014</a>) propose a
+different calculation of the pathway value, <span class="math inline">\(|resid_{i_{reduced}}|-|resid_{i_{full}}|\)</span>,
+without specifying an additional requirement about the relationship
+between the full model residuals and reduced model residuals.</p>
+<p>The function <code>pathway()</code> calculates both types of pathway
+values and requires the full regression model and the reduced regression
+model as input. Both models must be <code>lm</code> objects. The
+dataframe generated by the function contains all variables from the full
+model plus the following variables:</p>
 <ul>
 <li><code>full_resid</code>: Residuals in full model</li>
 <li><code>reduced_resid</code>: Residuals in reduced model</li>
-<li><code>pathway_wb</code>: Pathway values as proposed by Weller and Barnes (<span class="math inline">\(|resid_{i_{reduced}}|-|resid_{i_{full}}|\)</span>)</li>
-<li><code>pathway_gvalue</code>: Pathway values as proposed by Gerring (<span class="math inline">\(|resid_{i_{reduced}}-resid_{i_{full}}|\)</span>)</li>
-<li><code>pathway_gstatus</code>: Binary character variable that is coded “yes” if <span class="math inline">\(|resid_{reduced}| &gt; |resid_{full}|\)</span> is met and “no” otherwise.</li>
+<li><code>pathway_wb</code>: Pathway values as proposed by Weller and
+Barnes (<span class="math inline">\(|resid_{i_{reduced}}|-|resid_{i_{full}}|\)</span>)</li>
+<li><code>pathway_gvalue</code>: Pathway values as proposed by Gerring
+(<span class="math inline">\(|resid_{i_{reduced}}-resid_{i_{full}}|\)</span>)</li>
+<li><code>pathway_gstatus</code>: Binary character variable that is
+coded “yes” if <span class="math inline">\(|resid_{reduced}| &gt;
+|resid_{full}|\)</span> is met and “no” otherwise.</li>
 </ul>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1">df_full &lt;-<span class="st"> </span><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>disp <span class="op">+</span><span class="st"> </span>wt, <span class="dt">data =</span> mtcars) <span class="co"># full model</span></a>
-<a class="sourceLine" id="cb2-2" title="2">df_reduced &lt;-<span class="st"> </span><span class="kw">lm</span>(mpg <span class="op">~</span><span class="st"> </span>wt, <span class="dt">data =</span> mtcars) <span class="co"># reduced model dropp &#39;disp&#39; as pathway variable</span></a>
-<a class="sourceLine" id="cb2-3" title="3">pw_out &lt;-<span class="st"> </span><span class="kw">pathway</span>(df_full, df_reduced) <span class="co"># calculation of pathway variables</span></a>
-<a class="sourceLine" id="cb2-4" title="4"><span class="kw">head</span>(pw_out)</a>
-<a class="sourceLine" id="cb2-5" title="5"><span class="co">#&gt;                    mpg disp    wt full_resid reduced_resid  pathway_wb</span></a>
-<a class="sourceLine" id="cb2-6" title="6"><span class="co">#&gt; Mazda RX4         21.0  160 2.620  -2.345433    -2.2826106 -0.06282193</span></a>
-<a class="sourceLine" id="cb2-7" title="7"><span class="co">#&gt; Mazda RX4 Wag     21.0  160 2.875  -1.490972    -0.9197704 -0.57120172</span></a>
-<a class="sourceLine" id="cb2-8" title="8"><span class="co">#&gt; Datsun 710        22.8  108 2.320  -2.472367    -2.0859521 -0.38641476</span></a>
-<a class="sourceLine" id="cb2-9" title="9"><span class="co">#&gt; Hornet 4 Drive    21.4  258 3.215   1.785333     1.2973499 -0.48798349</span></a>
-<a class="sourceLine" id="cb2-10" title="10"><span class="co">#&gt; Hornet Sportabout 18.7  360 3.440   1.647193    -0.2001440 -1.44704909</span></a>
-<a class="sourceLine" id="cb2-11" title="11"><span class="co">#&gt; Valiant           18.1  225 3.460  -1.278631    -0.6932545 -0.58537640</span></a>
-<a class="sourceLine" id="cb2-12" title="12"><span class="co">#&gt;                   pathway_gvalue pathway_gtype</span></a>
-<a class="sourceLine" id="cb2-13" title="13"><span class="co">#&gt; Mazda RX4             0.06282193            no</span></a>
-<a class="sourceLine" id="cb2-14" title="14"><span class="co">#&gt; Mazda RX4 Wag         0.57120172            no</span></a>
-<a class="sourceLine" id="cb2-15" title="15"><span class="co">#&gt; Datsun 710            0.38641476            no</span></a>
-<a class="sourceLine" id="cb2-16" title="16"><span class="co">#&gt; Hornet 4 Drive        0.48798349            no</span></a>
-<a class="sourceLine" id="cb2-17" title="17"><span class="co">#&gt; Hornet Sportabout     1.84733701            no</span></a>
-<a class="sourceLine" id="cb2-18" title="18"><span class="co">#&gt; Valiant               0.58537640            no</span></a></code></pre></div>
-<p>The visualization of pathway values is different from the presentation of ordinary residuals because two models are involved and an observed-vs-fitted plot is not meaningful. Following the approach by Weller and Barnes, the <code>pathway_xvr()</code> function plots the pathway values against the pathway variable. The option <code>pathwaytype = &quot;pathway_wb</code> produces a plot for the Weller/Barnes values. The pathway variable is determined by the function and does not have to be specified. The plot is a <code>gg</code> object that can be customized with the usual <code>ggplot2</code> options.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">pathway_xvr</span>(df_full, df_reduced, <span class="dt">pathway_type =</span> <span class="st">&quot;pathway_wb&quot;</span>)</a></code></pre></div>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAkAAAAJACAMAAABSRCkEAAAApVBMVEUAAAAAADoAAGYAOpAAZrYzMzM6AAA6ADo6AGY6kNtNTU1NTW5NTY5NbqtNjshmAABmADpmtv9uTU1uTW5uTY5ubo5ubqtuq+SOTU2OTW6OTY6Obk2OyP+QOgCQkGaQ2/+rbk2rbm6ryKur5OSr5P+2ZgC2///Ijk3I///bkDrb/7bb///kq27k////tmb/yI7/25D/5Kv//7b//8j//9v//+T////F3XEWAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAMAElEQVR4nO3di3bTVgKGUUEDLaGQgTKFdmBgOtwyhYQk4Pd/tLGcq++yf9vSsfZeqw1dnCLH/pCOrqkGEKjafgGUTUBEBEREQEQERERARFYJSGxMERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBdUtVFfYuC6hTqqq0ggTUKQIiIiAypfUjIDICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIkuiOHt+ePi64Vj6aHEUF3+8H5z99r7RWHppcRSnT4f/+nS9ChIQU5ZHUa+FBoMHQwJiytIofrx72Xgs/bMsiotXN/0IiGlL98Je3/6HgJiyOIqxfgTEtMVRfDms2QtjLkeiiQiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIqLOqqoQ3XEBdVVVFFCSgrhIQEQGRKaIfAZEREBEBEREQEQERERARAREREBEBEREQkW4GVMZRfAYdDaiQ84gMBESo0wHJqPs6GdDgph8FdV03A7panoC6T0BEuhyQOVABOh0Q3ScgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiKyNIqzF58bj6V/lkVxevirgJhvSRSfHv9lDcQCTTdhD4YExBRzICICIiIgIgLakX39EeYC2o2q2tOCHIneDQGtOJZxAlpxLBP2tB8BkREQEQERERARAXVKeVNtAW3HeiUUuLMvoK1YswQBcUlA6dieW7eE4voR0HqWftDllbAmAa2jwE3NtghoHQK6IaB1COiGgNain2sCIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIissmAXCTTQxsMyGV6fTT2iZ8fPTs/qu5/bDJ2xm8LqIfGPvEPB4Pj+x+PD5qMnfHbAuqhu5/4cAX0/c3B4GTeKsgciCkTAZ0fPVo/IHrobhTf3zw6ufe23pAtHwsjY1F8e1gdDD789HeTsVBzIJGIgIiMR3FcVc+ObcJobvw40E//u9yTbzAWalO78c/sxrMCAREZi+K43oTVxxIbjGW+Ph2SH/9OT+rTWfP6EVBDvTopaDd+88oIaEOvUUCbV0RAm3qR45Po0Z8694Kgzr8pXVFAP1sJ6NL5P942HkuxthfQ4GTeoWgB7ZPtzYEcB6K5GVHMvZ5DQEyZMYm+Zw5EY3bjiQiIyE0U1weBHAdiFdZARAREZPKuDJswVjJxX9j3N6NrypaPhZGJKxIHHx45lcEKJgM6Du6Np4cmn84xrGfufT0CYspYFMNJ0OCDUxmswG48EQERGZ9Ez70hY2osjIzfF1ZV1byDQJNjoTYZxQfXA/Xcipe6zroi0XGgHlv1YvsZa6B1H/PLPogCWrT9mhzLfkoCmn8adXos+yqfA21kLD0hICICIiIgIgIiMr4XtmgnXkDMMB7Fh6qa+5RoATHDZBT1/YUeskljMx4wdTTvbIaAmDIZxXFVHcx7wouAmDJxTfTV9UCzb8wQEFPG98LmnoifGgsjjgMRcW88EffGE3FvPBH3xhNxbzwR98YTsRtPZOJB4wuvql8WUAk/pIYNmzqVsf59YUX8mCw2bPoT//5mzb0wAfXR5Cd+suDxCgJiyuQmbMEFieZATHNnKpHJa6KTNRA9NBnFt4crz4Fsufosfz6QuXOvzboeaLW7MgTUaxNHohc+ZVNATNnAuTD99JlLWomMX9J60HgsjCw5kHjx6vDJ11ljYWR8DTQZ0I93rwdfns4aCyNjUUxdDX3x5+fB2YvPs8ZCbfGP/T77/evg4o/3w189GLr67cHVrrtf9flXUwHNdPrkOqDlY+mlGZPok1lroMmxMLI4IHMglriN4ri6dns06Me7l/bCWMRxICJF3Rd2Z/JPR5R0Lmxs95FuKOnxLgLqoJIe7yKgDirq8S766Z6xT8TjXVjVxI2FHu/Caorajad7BETkThSLfuL35Fi4dBtF/fMxjhcWJCCm3EQxup51+qLWmWPh2p0rEp9d7oY1GAvXBEREQERaDcipifItvitjzthNLdvJ0fK1eSBRQHtAQERaPZVRbj/lvvIVLf1GnQtbR2/Wncu/UQGtQ0C3I1b507IXs0cEdDtilT8tezH7pCf9mAOxbQIiIiAiAiIiICICIiIgIgJaS2+OAy0loHX05kj0cgJah4BuCGgdArohoLXo55qAiAiIiICI7Dggc4d9s9uA7L3sHQERERARcyAi9sKICIjIpgKybeqpDQVkdtxXrQYkuvK1GZDV1h5ocw4koD3gAVNLFPASW+UBU4sVEXmbHAdaTEBLCGgxAS0hoCX0s5iAiAiIiICICIiIgIgUFZA9ou4pKSDHZDqovwGJcSN6G5DV2WaUFNBGVxoC2oyiAtokAW1GbwMyB9qMDgfkEy5BdwOyjSmCgIgIiEh3AzIHKkKHA6IEAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgImUG5PGJnVFkQB7g2h0CIrL0czh78bnx2F0RUHcs+xxOD39NAtrSB62fzljyQXx6/FeyBrKq2HtNN2EPhgTElO3OgQS09+Z/vJ8OD58O0km0fvZdkXthdIeAiAiISJFHoumOdgMyxy5eqwHZyy+fgIgIiIg5EBF7YUQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARARERECdVcZT2AXUVYX8HAgBdZWAiAiITBH9CIiMgIgIiIiAiAiIiICICIiIgIgIiEiZAZVxkLYXigyokNNEvSAgIgIiUmRA5kDdUWZAdIaAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgIgIiIiAiAiIiICICIiIgPZGO5dpCmhftHShuID2hYCICIiMORAFEhARAREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARARFZKaC1PVj/f030a7G7Xe46Aa3vwU6W0vPFtrNcAe3NYgVksQUu18SYiICICIiIgIgIiMh2Azp78XkwuHh1+OTrzZftO3t+ePh694s9PTz8tYXvdujHuxa+3WtbDei0fkvrb+/L0+sv23fxx/vB2W/vd73Y+u/K7fJ2ttjal+HflzaWO7LNgD49/mv4rl78+bl+d6++bHFxV07r9+/T610vtna7vF0u9uyf/3q983f5xvY3YWe/f63XCldftrq4G7fL2+lih3/3d7/YH//573C108a3O7L9gE6fjL6nqy9bXdy1H+9etrDYs+eP37ew2C8v6+1WC+/ypX1cA128ejnozYpvuKQf+70G2vnW+ez5cKeknUlBC1OvL4e1l3s8B6q3J6P9g5c72h0a9bPzxV5tPHa92Fq9BmpjuSP7dxzo8q/k650fGBkudzgHchwIViEgIgIiIiAiAiIiICICaurk/sdvP79t+1V0joCaGgbU9kvoIgE1JaCZBNTE+VF179+Xm7BvD6uqejb49vO/q+qnv9t+Ye0TUAPnR4+G/4wCGk2Dvj189u3h/Y/f3xy0/craJ6AGRluv48uAfrnckA0bGv7LpFpATRzX26phOnUwH6qqXu+M2jk/etb2S2udgBq4G9BoQnS1Ry8gATUy2oTdOQ40DOdyE/aLHTMBNXB+dHA9iR61VM+FTKIvCaiJO7vxJ8O9+HtvL3fj9SOgddkBuyKg9QjoioDWI6ArAiIiICICIiIgIgIiIiAiAiLyf1mRI0RArUS6AAAAAElFTkSuQmCC" /><!-- --></p>
-<p>The Gerring pathway values are plotted against the pathway variable if the option is `pathway_type = “pathway_gvalue”. A color scheme is used to distinguish the cases that meet the pathway case requirement (“yes”) from those that don’t (“no”).</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1"><span class="kw">pathway_xvr</span>(df_full, df_reduced, <span class="dt">pathway_type =</span> <span class="st">&quot;pathway_gvalue&quot;</span>)</a></code></pre></div>
-<p><img src="data:image/png;base64,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" /><!-- --></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a>df_full <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> disp <span class="sc">+</span> wt, <span class="at">data =</span> mtcars) <span class="co"># full model</span></span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a>df_reduced <span class="ot">&lt;-</span> <span class="fu">lm</span>(mpg <span class="sc">~</span> wt, <span class="at">data =</span> mtcars) <span class="co"># reduced model dropp &#39;disp&#39; as pathway variable</span></span>
+<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a>pw_out <span class="ot">&lt;-</span> <span class="fu">pathway</span>(df_full, df_reduced) <span class="co"># calculation of pathway variables</span></span>
+<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="fu">head</span>(pw_out)</span>
+<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a><span class="co">#&gt;                    mpg disp    wt full_resid reduced_resid  pathway_wb</span></span>
+<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a><span class="co">#&gt; Mazda RX4         21.0  160 2.620  -2.345433    -2.2826106 -0.06282193</span></span>
+<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a><span class="co">#&gt; Mazda RX4 Wag     21.0  160 2.875  -1.490972    -0.9197704 -0.57120172</span></span>
+<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="co">#&gt; Datsun 710        22.8  108 2.320  -2.472367    -2.0859521 -0.38641476</span></span>
+<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a><span class="co">#&gt; Hornet 4 Drive    21.4  258 3.215   1.785333     1.2973499 -0.48798349</span></span>
+<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a><span class="co">#&gt; Hornet Sportabout 18.7  360 3.440   1.647193    -0.2001440 -1.44704909</span></span>
+<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="co">#&gt; Valiant           18.1  225 3.460  -1.278631    -0.6932545 -0.58537640</span></span>
+<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a><span class="co">#&gt;                   pathway_gvalue pathway_gtype</span></span>
+<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a><span class="co">#&gt; Mazda RX4             0.06282193            no</span></span>
+<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a><span class="co">#&gt; Mazda RX4 Wag         0.57120172            no</span></span>
+<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a><span class="co">#&gt; Datsun 710            0.38641476            no</span></span>
+<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a><span class="co">#&gt; Hornet 4 Drive        0.48798349            no</span></span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a><span class="co">#&gt; Hornet Sportabout     1.84733701            no</span></span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a><span class="co">#&gt; Valiant               0.58537640            no</span></span></code></pre></div>
+<p>The visualization of pathway values is different from the
+presentation of ordinary residuals because two models are involved and
+an observed-vs-fitted plot is not meaningful. Following the approach by
+Weller and Barnes, the <code>pathway_xvr()</code> function plots the
+pathway values against the pathway variable. The option
+<code>pathwaytype = &quot;pathway_wb</code> produces a plot for the
+Weller/Barnes values. The pathway variable is determined by the function
+and does not have to be specified. The plot is a <code>gg</code> object
+that can be customized with the usual <code>ggplot2</code> options.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="fu">pathway_xvr</span>(df_full, df_reduced, <span class="at">pathway_type =</span> <span class="st">&quot;pathway_wb&quot;</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="co">#&gt; Warning: `aes_string()` was deprecated in ggplot2 3.0.0.</span></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="co">#&gt; ℹ Please use tidy evaluation idioms with `aes()`.</span></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="co">#&gt; ℹ See also `vignette(&quot;ggplot2-in-packages&quot;)` for more information.</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a><span class="co">#&gt; ℹ The deprecated feature was likely used in the MMRcaseselection package.</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a><span class="co">#&gt;   Please report the issue at</span></span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a><span class="co">#&gt;   &lt;https://github.com/ingorohlfing/MMRcaseselection/issues&gt;.</span></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="co">#&gt; This warning is displayed once per session.</span></span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a><span class="co">#&gt; Call `lifecycle::last_lifecycle_warnings()` to see where this warning was</span></span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a><span class="co">#&gt; generated.</span></span></code></pre></div>
+<p><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAkAAAAJACAMAAABSRCkEAAAAYFBMVEUAAAAAADoAAGYAOpAAZrY6AAA6ADo6AGY6OmY6OpA6kNtmAABmADpmAGZmOgBmtv+QOgCQOjqQkGaQtpCQ29uQ2/+2ZgC2///bkDrb/7bb////tmb/25D//7b//9v////oi9nKAAAACXBIWXMAAA7DAAAOwwHHb6hkAAALxElEQVR4nO3d6VrbSAKGUZFAMg3pgekM4IltfP93OZZYvcv6vKisc340SaeeyOA3Uml1NYNAde4XQNkERERARAREREBEBERkn4DExgoBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQEREVC/VFVhP2UB9UpVlVaQgHpFQEQERKa0fgRERkBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBERkRxSTm6q6bzmWIdoexfTX42zy47HVWAZpexTj6/l/nt5XQQJixe4o6rVQibdMchI7o3h5uG09luHZFcX07qMfAbFq517Y/edvBMSK7VEs9CMgVm2PYtTMne2FsZEj0UQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBNRbZXy+loD6qpBPaBNQXwmIiIDIFNGPgMgIiIiAiAiIiICICIiIgIgIiIiAiAiISD8DKuMoPrOeBlTIeURmAiLU64Bk1H+9DGj20Y+C+q6fAb0tT0D9JyAifQ7IHKgAvQ6I/hMQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARAREREBEBEREQEQERERARARHZGcXk53PrsQzPrijG1TcBsdmOKJ6uflsDsUXbTZjPL2UtcyAiAiIiICICOpFLnUIK6DQudifEkejTENCeY1kkoD3HsuRC+xEQGQERERARARERUK+UN9UW0HF0K6HAnX0BHUXHEgTEKwGlYweuawnF9SOgbna+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" /><!-- --></p>
+<p>The Gerring pathway values are plotted against the pathway variable
+if the option is `pathway_type = “pathway_gvalue”. A color scheme is
+used to distinguish the cases that meet the pathway case requirement
+(“yes”) from those that don’t (“no”).</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">pathway_xvr</span>(df_full, df_reduced, <span class="at">pathway_type =</span> <span class="st">&quot;pathway_gvalue&quot;</span>)</span></code></pre></div>
+<p><img role="img" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAkAAAAJACAMAAABSRCkEAAAAhFBMVEUAAAAAADoAAGYAOpAAZrY6AAA6ADo6AGY6OmY6OpA6ZrY6kNtEAVRmAABmADpmAGZmOgBmOpBmZmZmtrZmtv+QOgCQOjqQOmaQZgCQkDqQkGaQtpCQ27aQ29uQ2/+2ZgC2Zjq2///bkDrb/7bb///95yX/tmb/25D/29v//7b//9v////wQE5rAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAPbElEQVR4nO3djXrayAFGYWFjuymQdFuctLtbKKqRCrr/+yszEiAJoR8+kDTMeZ/NY7L2WDgc6w8xBAkgCIa+A3AbAUFCQJAQECQEBAkBQdI9IJJDDgFBQkCQEBAkBAQJAUFCQJAQECQEBAkBQUJAkBAQJAQECQFBQkCQEBAkBAQJAUFCQJAQ0Nhst9uh70IXBDQy261bBRHQyBAQJAQEjVv9EBA0BAQJAUFCQJAQECQEBAkBQUJAkBAQJAQECQFBQkCQEBAkBAQJAUFCQJAQECQEBAkBQUJAkBAQJAQECQFBQkCQEBAkBAQJAUFCQJAQECQEBAkBQUJAkBAQJAQECQFBQkCQEBAkBARJTQ7xWxAs7a3dInj9ajEC/rmew+77KonfV4db+89lEk6bR8BD13OITDJrswra/dgk8cemcQQ8VJ+DWQsdtmXfvrJbgdHL/YIjanPYf87Mh+j1GFDjCPimLofdYmY/ntdATSPgndqjsPQYjH0gXHc9h1M/dkvGURgqXc8htHvMS7Pq4TwQruFMNCQEBAkBQUJAkBAQJAQECQFBQkCQEBAkBAQJAUFCQJAQECQEBAkBQUJAkBAQJAQECQFBQkCQEBAkBDRi8/l86LvQiIDGaz53oCACGi8CgoSAoHGgHwKChoAgISBICAgSAoKEgCAhIEgICBICgoSAICEgSAgIEgKChIAgIaDnMcjVHwT0NIa5/oyAngYBQUJA0LAPBPcQECQEBAkBQUJAkBAQJAQECQFBQkCQEBAkBAQJAUFCQJAQECQEBAkBQUJAkBAQJAQECQFBQkCQEBAkBAQJAUFCQJAQECQENGLb7Xbou9CIgMZru3WgIAIaLwKChICgcaAfhwNy4f0gPeBsQE68I60HCAgSAoLE2YDYBxoHdwPCKBAQJAQECQFBQkCQEBAktTnEHxv7MQyC4GXTZgR8U5dDdKxmvWw5At6pyWE9+SNdA+1/rtqNgH/abMJ2i8MmzK6EAqOPuwVXtAkofl/l1kIEhJxWO9HGaT+IgJBDQJC0CSh6/Ur2vziMR4XGgMyfMAgmq1Yj4JsRn4l24ZJyjDcgJ17UAgKChIAgGW9A7AM5YcQBZeho1EYfEFuycSMgSAgIktEHxD7QuI0/IIwaAUFCQJAQECQEBAkBQUJAkBAQJIUcdovlbnF+EXOLEfBdIYf1NAlfNuG0/Qj4Lp/DYQW0/5wmUf0qiICQUwpot5gREDrI57D/nEWTldmQtR0B7xVyiN+CabJ+/Wo/Ar7jMB4SAoKkmEMYBMuQTRjaK54Hev1veiTfegR8d3EYv+QwHh0QECSFHEKzCTPnEluPgO+KOURmEs1ZlxHwHIfxkBAQJMWdaDsPdMMFQQSEnMscdt9XFV9XNwIeq8ghqj8VTUDIqQqITRhaq8ih4XoOAkJOxU70hH0gtMZhPCQEBMkph+NJIM4DoQvWQJAQECTlV2WwCUMnpdeF7T/tNWVtR8B7pSsSk/WMpzLQQTmgkNfGo4vy7ByHehpe10NAyCnkcNgJStY8lYEOOIyHhIAgKe5EzzqOgPeKrwsLgqD+JFB5BHxXzmHN9UDoouqKRM4DobWKNRDT/KK94onExu1XeQR8V34qo9sIeI/zQJAQECQEBAkBQUJAkBSPwpoP4gkIBcUc1kHQMEs0AaGgnIN5feGs0wh47TKH/Wf9sxkEhJxyDmEQTOtneCEg5JSuic6uB6p7YQYBIad4FNbwRPzFCHiP80CQ8Np4SEbw2vj5fH7vb4neDP/a+Pmcghw2/GvjCchpw782noCcNoLXxtOPyziMh6Q00XiLq+oJCDkXT2XwujB0UfVsPCcS0Vo5h4j3TEUX5U1Y89OpBIQcXpkKSfma6MZLogkIeeUc4remQ3kCQk7t/EDxR3prt8itmQgIOVXXA82yv0bZLvX+0z7JWjUCviudiZ7l/rqe/JGugXY/NqeV0U0B8WzX86rNIasm/vaVvZu8XUF1XgbPtz+x2ktas4DMFWZpQBcjWiGgJ1a8pHVa/OTFGqg8oh0CemK1JxJj9oHQoLgGqg7IXGfGURgqFXIoXw1tAjJ/OA+Ea3jbb0i4pBWSip1o3vLyMbbb7dB34QEIqC/b7VMWdM4hPO0DTWu+noBu9fQBcUHZY3kQ0KNGwHrKfpjeBZoRTO8Clw0/vQucNvz0LnDa8NO7uOo594k7G8H0Lm560qPyzjiMvxEBpQjoRgSUyuXQ/I7f5RFeox/rnIN5f4ywRUEE9FCudXnKwV7PenFRa90IPIBzW8bcFYnL9DCs9QjUu6kEAkLmthQICJkbU3CsHwJ6GOfWJbfhVRkP40U/nEiEhoAgISBICAgSAoKEgCAhIEgICBICgoSAICEgSAgIEgKChIAgISBICAgSAoKEgCAhIEgICBICgoSAICEgSAgIEgKChIAgISBICAgSAoKEgCAhIEgICBICguT+AfkxMRcydw/Ik6kBkSEgSAgIEvaBIOEoDBICgmTsAc3n816Xh45GHtB8TkHjRkCQEBAkIw+IfaCxG3tAGDkCgoSAIPE7IPawZF4HxDGejoCGvhOOcy6gez7kBKRzLaD7Pub0I/M7IMgICBLXAmKrMzLOBYRxIaCH8OfCcAJ6BI9emkJAj+BEQPe5iwT0CC4EdKf7SEAPMf5+CAgaAoLm4ftAu0Xw+mVvhUEQvGyaR8A/13PYfy6TcGpvrpetRsBD13PY/dgk8YdZ7+x/rlqNgIeu5xB/+0p23006h21ZENiVUGD0ddfGg+ffrrueQ/R6DCh+X+XWQv4FxBUANdqsgazTfhABIafNPpBFQKhSdxQ2y47CzMZs/8vjw3j6ua7xPJBZCYVBMFm1GHETHh2nDX4mmu2D2wgIkvsGdEMLBOS2uwZ0Uwz047ThA4LTCAiSwfeB4LbBj8LgNgKChIAgISBICAgSAoKEgCAZIiDOFj2RAQLifPUzISBICAgS9oEg4SgMEgKChIAgISBICAgSAkJRx4nLCAgFXadOJKBbPenZLALqybOeTyegnjxrQOwD9eRpA+qIgG5FPxYBQUJAkBAQJAQECQFBQkCQEBAkBAQJAUFCQJAQECQEBAkBQUJAkBDQrTy5nKPpxySgG3lyQVnjj0lANyKgFAHdiIBSBHQrL/phHwgPRkCQjCAgT7YFT2r4gDzZG31WBAQJAUEyfEDsAzltBAHBZQQECQFBQkCQEBAkBATJ/QPqOEUa3Hb3gLpO0gi3ERAkBAQJ+0CQcBQGCQFBQkCQEBAkBAQJAUFyt4A4evfTvQLi/KGnnAuIK6jHxbWAeA3HyLi2D0RAI+PaURgBjYxrAbEPNDLOBYRxISBICAgSAoKEgCAhIEhqctgtgtev0q36EfDP9Rz2n8sknBZv1Y+Ah67nsPuxSeKPTeFW/Qh46HoO8bevZPd9VbgVnJ3/xi0vbzUGFL0esznfqh8BD3VbA9WPgIfYB4Kk7ihsdjoKm3EUhmqN54HMqofzQLiGM9GQEBAkBAQJAUFCQJAQECQEBAkBQUJAkBAQJAQECQFBQkCQEBAkBAQJAUFyQ0BAcHphRp/rk0HWXcOsMP1ZKgGxVOeWiSdCQJAQECQEBAkBQdJHQPZl0dmLEwuvUXzgIt+CYNn3QpMoCF56/1GTdAKn/pea6iGgyPyrZpNUFeeqehgzFUT8vup3ofYX5by4vpZ6EB5+WfpfaurxAa0nf5hXR6cTNBTnaXiYyPwTrpf9LtQ6L66/pcZ/+duy53/gs742YdkUMcWZYh7qvLQeF2p++/te6v7nvw+rnQF+VquvgLJJqopzVT2SmVKk94XGb5NV70sNZ2a71fvPmnnWNdBuMUuG+K3sf713WM7egzVQz5vo+O1wXDLIfkHve16hfW589uz7QNkkVcW5qh63RNtPzws9bkV6XmqSHsb3v9TUc54HSn8rl32fGzks9rAPxHkgoDUCgoSAICEgSAgIEgKChIAgIaAOopdN/N7j0wQuIKAOopcenyNwBAF1QECXCKil3SKY/J5uwsz1ssEyid9/D/p92mCMCKgdc3nIbmEDsrtB8dsyfnvZ7D/7fOJyjAioHbv1CtOAsqsl7FP+3u9UE1A7odlWHdIxwayDwKx3bDu7xXLouzYsAmonH5DdIcqO6Alo6DvgCLsJy50HOoSTbsL6vPpvjAiond1ietyJti2ZfSF2ohMCai13GB8F9spDexjvez8EdDvvD8AsAroZARkEdDMCMggIEgKChIAgISBICAgSAoKEgCAhIEgICBICgoSAICEgSAgIEgKChIAgISBICAgSAoKEgCAhIEgICBICgoSAICEgSAgIEgKChIAgISBInAto/xmkbxJa+v9NczhXfj607zBoHadfveL4uYpv4/ckCw4GNDMfsndFPbsloPwEhw0B1XwbAnJKFlCyLs0N1jKgwpyG+Yf+QQHN5/PG71my3W67DhmQ0wGZzdnLpjD9nH04zf+fJheft+MOt2fZtzIzzk+Pg84BxR//Cszsh+nY07T0q4vF2E/Nzjcr5mudzysKir/9036xnev1Ysh2W1HQ2r4xfDYgCqrGDcTVgKLAvNP11M6/m5tF3j6y5v+brVP588dvsT6+QYF96C8DerNtpmNP09K/r8qLsRvAsDB5/cW9rQ7obWbfInydfiipDCiamf/W9i29zVvD9/rO3rUcDCjI3tM73ZwcHsbcLPKFTVH58+dvckzlSkC5732alj6bnTW3mP99JaeR1yb7rQ7o8NWHPyaE3feLzV9lQLvfvv6zMl98GFQxZkAOBjRLf4eP7w4fzAqTgB8f6YrPH79F0xrIfDiOzU1LX15Mkk3Xmpu8/lLVPlAWkPmw/3kZQ9U+0P7nn7+ZLVg6Pezb+eBxcG4GZLdg6ezxSWkW+XxApc/bv+T2gWoDOm9bjtPSlxezW9i5fle5yevb/Qj1a6Bq4d9ndtuVqdj0DcTRgJL14dGKJrlNVVSxCSt93ty+OAq7ElCU/x03m7Ksy9xi7IMYTU6La/2uB1lAV/aBrowxC0kHmDEEdLPTeaDp4ab5p5ysjrPIm73c/efE7kSnf4qfv/he6aFVOqgU0HHsaVr694vFRHZrYkcev6rdj3AMqMNKK9n/yo4mTUcchQmOh/FhMLM71JPV+TDdHEz/43vxMD7/+bLs4MkOKgV0Gnualn51sZjDAzn5066cjl/1OPFfH/jNFc4F5KdwPHvNJQQECQFBQkCQEBAkBAQJAUFCQJAQECQEBAkBQUJAkBAQJAQECQFBQkCQEBAkBAQJAUFCQJD8Hz/8uQfJKDPgAAAAAElFTkSuQmCC" /><!-- --></p>
 
 
 

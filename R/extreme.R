@@ -8,7 +8,7 @@
 #' and the variable's mean value is proposed by Seawright, Jason (2016): The
 #' Case for Selecting Cases That Are Deviant or Extreme on the Independent
 #' Variable. \emph{Sociological Methods & Research} 45 (3): 493-525.
-#' (\url{https://doi.org/10.1177/0049124116643556})
+#' (\doi{10.1177/0049124116643556})
 #'
 #' @param lmobject Object generated with \code{\link[stats]{lm}}
 #' @param ind_var Independent variable for which extremeness values should
@@ -37,7 +37,7 @@ extreme_on_x <- function(lmobject = NULL, ind_var = NULL) {
   if (is.null(ind_var)) {
     stop("Please specify the independent variable")
   }
-  if (class(lmobject) != "lm") {
+  if (!inherits(lmobject, "lm")) {
     stop("lmobject input into function is not of class lm")
   }
   if (isFALSE(ind_var %in% names(lmobject$model[, 2:ncol(lmobject$model)]))) {
@@ -62,7 +62,7 @@ extreme_on_x <- function(lmobject = NULL, ind_var = NULL) {
 #' and the variable's mean value is proposed by Seawright, Jason (2016): The
 #' Case for Selecting Cases That Are Deviant or Extreme on the Independent
 #' Variable. \emph{Sociological Methods & Research} 45 (3): 493-525.
-#' (\url{https://doi.org/10.1177/0049124116643556})
+#' (\doi{10.1177/0049124116643556})
 #'
 #' @param lmobject Object generated with \code{\link[stats]{lm}}
 #'
@@ -86,7 +86,7 @@ extreme_on_x <- function(lmobject = NULL, ind_var = NULL) {
 #'
 #' @export
 extreme_on_y <- function(lmobject) {
-  if (class(lmobject) == "lm") {
+  if (inherits(lmobject, "lm")) {
     tempy <- lmobject$model[, 1]
     tempdf <- lmobject$model
     tempdf$`abs. extremeness` <- abs(tempy - mean(tempy))

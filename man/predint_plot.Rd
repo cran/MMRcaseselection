@@ -12,13 +12,13 @@ predint_plot(pred_df)
 \value{
 A plot of the observed outcome against the fitted outcome with
 prediction intervals and case classifications. Created with
-\code{\link{ggplot2}}.
+\pkg{ggplot2}.
 }
 \description{
 Presented in Rohlfing, Ingo and Peter Starke (2013):
 Building on Solid Ground: Robust Case Selection in Multi-Method Research.
 \emph{Swiss Political Science Review} 19 (4): 492-512.
-(\url{https://doi.org/10.1111/spsr.12052})
+(\doi{10.1111/spsr.12052})
 }
 \examples{
 df <- lm(mpg ~ disp + wt, data = mtcars)

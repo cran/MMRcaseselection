@@ -7,7 +7,7 @@
 #' Case Selection Techniques in Case Study Research: A Menu of
 #' Qualitative and Quantitative Options. \emph{Political Research Quarterly}
 #' 61 (2): 294-308.
-#' (\url{https://journals.sagepub.com/doi/pdf/10.1177/1065912907313077})
+#' (\doi{10.1177/1065912907313077})
 #'
 #' @param lmobject Object generated with \code{\link[stats]{lm}}
 #'
@@ -21,7 +21,7 @@
 #' most_deviant(df)
 #' @export
 most_deviant <- function(lmobject) {
-  if (class(lmobject) == "lm") {
+  if (inherits(lmobject, "lm")) {
     absresid <- sort(abs(residuals(lmobject)))
     return(absresid[length(absresid)])
   }
@@ -47,7 +47,7 @@ most_deviant <- function(lmobject) {
 #' most_overpredicted(df)
 #' @export
 most_overpredicted <- function(lmobject) {
-  if (class(lmobject) == "lm") {
+  if (inherits(lmobject, "lm")) {
     resid <- sort(residuals(lmobject))
     return(resid[1])
   }
@@ -76,7 +76,7 @@ most_overpredicted <- function(lmobject) {
 #'
 #' @export
 most_underpredicted <- function(lmobject) {
-  if (class(lmobject) == "lm") {
+  if (inherits(lmobject, "lm")) {
     resid <- sort(residuals(lmobject))
     return(resid[length(resid)])
   }
